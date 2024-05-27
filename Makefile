@@ -1,8 +1,14 @@
 db:
-	./duckdb db.duckdb
+	@./duckdb db.duckdb
 
 run:
-	dbt run
+	@dbt run
 
 test:
-	dbt test
+	@dbt test
+
+lint:
+	@sqlfluff lint
+
+fix:
+	@sqlfluff fix

@@ -1,0 +1,22 @@
+sources:
+  - name: ecommerce
+    tables:
+      - name: purchase_price
+        meta:
+          external_location: "read_csv('seeds/2017PurchasePricesDec.csv', AUTO_DETECT=TRUE)"
+      - name: beginv_final
+        meta:
+          external_location: "read_csv('seeds/BegInvFINAL12312016.csv', AUTO_DETECT=TRUE)"
+      - name: endinv_final
+        meta:
+          external_location: "read_csv('seeds/EndInvFINAL12312016.csv', AUTO_DETECT=TRUE)"
+      - name: invoice_purchases
+        meta:
+          external_location: "read_csv('seeds/InvoicePurchases12312016.csv', AUTO_DETECT=TRUE)"
+      - name: purchases_final
+        meta:
+          external_location: "read_csv('seeds/PurchasesFINAL12312016.csv', AUTO_DETECT=TRUE)"
+      - name: sales_final
+        meta:
+          external_location: "read_csv('seeds/SalesFINAL12312016.csv', AUTO_DETECT=TRUE)"
+

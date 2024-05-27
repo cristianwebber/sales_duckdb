@@ -1,18 +1,18 @@
-with
+WITH
 
-source_data as (
-select
-    inventoryid as inventory_id
-    , store
-    , city
-    , brand
-    , description
-    , size
-    , onhand as on_hand
-    ,(price*100)::integer as price
-    ,enddate as end_date
-from {{ source('ecommerce', 'endinv_final') }}
+source_data AS (
+    SELECT
+        inventoryid AS inventory_id
+        , store
+        , city
+        , brand
+        , description
+        , size
+        , onhand AS on_hand
+        , (price * 100)::integer AS price
+        , enddate AS end_date
+    FROM {{ source('ecommerce', 'endinv_final') }}
 )
 
-select *
-from source_data
+SELECT *
+FROM source_data

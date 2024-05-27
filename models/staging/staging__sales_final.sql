@@ -1,23 +1,23 @@
-with
+WITH
 
-source_data as (
-select
-    inventoryid as inventory_id
-    , store
-    , brand
-    , description
-    , size
-    , salesquantity as sales_quantity
-    , (salesdollars*100):: integer as sales_dollars
-    , (salesprice*100):: integer as sales_price
-    , salesdate as sales_date
-    , volume
-    , classification
-    , (excisetax*100)::integer as excise_tax
-    , vendorno as vendor_number
-    , vendorname as vendor_name
-from {{ source('ecommerce', 'sales_final') }}
+source_data AS (
+    SELECT
+        inventoryid AS inventory_id
+        , store
+        , brand
+        , description
+        , size
+        , salesquantity AS sales_quantity
+        , (salesdollars * 100)::integer AS sales_dollars
+        , (salesprice * 100)::integer AS sales_price
+        , salesdate AS sales_date
+        , volume
+        , classification
+        , (excisetax * 100)::integer AS excise_tax
+        , vendorno AS vendor_number
+        , vendorname AS vendor_name
+    FROM {{ source('ecommerce', 'sales_final') }}
 )
 
-select *
-from source_data
+SELECT *
+FROM source_data

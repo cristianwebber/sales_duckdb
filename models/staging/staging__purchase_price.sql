@@ -1,19 +1,19 @@
-with
+WITH
 
-source_data as (
-select
-    brand as id
-    , description
-    , classification
-    , (price*100)::integer as sell_price
-    , (purchaseprice*100)::integer as purchase_price
-    , (sell_price - purchase_price) as profit_per_unit
-    , size
-    , volume
-    , vendornumber as vendor_number
-    , vendorname as vendor_name
-from {{ source('ecommerce', 'purchase_price') }}
+source_data AS (
+    SELECT
+        brand AS id
+        , description
+        , classification
+        , (price * 100)::integer AS sell_price
+        , (purchaseprice * 100)::integer AS purchase_price
+        , size
+        , volume
+        , vendornumber AS vendor_number
+        , vendorname AS vendor_name
+        , (sell_price - purchase_price) AS profit_per_unit
+    FROM {{ source('ecommerce', 'purchase_price') }}
 )
 
-select *
-from source_data
+SELECT *
+FROM source_data

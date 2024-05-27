@@ -1,6 +1,3 @@
-env:
-	source venv/bin/activate
-
 db:
 	./duckdb db.duckdb
 

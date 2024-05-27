@@ -1,0 +1,8 @@
+dbt_sales:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'db.duckdb'
+      extensions:
+        - parquet

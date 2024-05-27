@@ -7,3 +7,4 @@ duckdb
 db.duckdb
 # Cannot commit seeds because they are too big
 seeds/
+.user.yml
